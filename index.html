@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sing's Food & Drink Menu</title>
+  <style>
+    :root {
+      --bg-light: #fefefe;
+      --text-light: #111;
+      --bg-dark: #1d1d1d;
+      --text-dark: #eee;
+      --primary: #2d4ee3;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: 0.3s ease;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.5rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+
+    .dark-mode .menu-item {
+      background: #2c2c2c;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 1rem;
+    }
+
+    .menu-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .menu-price {
+      float: right;
+      color: var(--primary);
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #444;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .dark-mode .toggle-btn {
+      background: #ddd;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌞 / 🌙</button>
+  <header>Sing's Food & Drink Menu</header>
+
+  <div class="container">
+    <h2>🍽️ Food</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="https://kohsantepheap.tv/wp-content/uploads/2021/12/8Q3A9946.jpg" alt=""><div class="menu-info"><span class="menu-name">បង្គារកោះកុង</span><span class="menu-price">$5.99</span></div></div>
+      <div class="menu-item"><img src="https://jongphov.com/wp-content/uploads/2021/03/%E1%9E%84%E1%9E%B6%E1%9E%9C%E1%9E%86%E1%9E%B6%E1%9E%A2%E1%9F%86%E1%9E%96%E1%9E%B7%E1%9E%9B%E1%9E%91%E1%9E%BB%E1%9F%86.jpg" alt=""><div class="menu-info"><span class="menu-name">ងាវឆាងអំពិលទំុ</span><span class="menu-price">$4.50</span></div></div>
+      <div class="menu-item"><img src="https://kohsantepheap.tv/wp-content/uploads/2020/12/1K6A5933.jpg" alt=""><div class="menu-info"><span class="menu-name">បុកមឹក</span><span class="menu-price">$7.20</span></div></div>
+      <div class="menu-item"><img src="https://kohsantepheap.tv/wp-content/uploads/2020/12/1K6A5977-1024x683.jpg" alt=""><div class="menu-info"><span class="menu-name">បុកល្ហុង​ សាលម៉ុន</span><span class="menu-price">$6.80</span></div></div>
+      <div class="menu-item"><img src="https://instalacarte.com/media/cache/mobile_image/product/4756/62228/9d92c1c3a86fc6f4622a001113dadf29.jpg" alt=""><div class="menu-info"><span class="menu-name">ពោះគោ ទឺកប្រហុក</span><span class="menu-price">$3.90</span></div></div>
+      <div class="menu-item"><img src="https://domnor.com/admin/images/product/2019-07-20-16-19-31_1.jpg?v=1" alt=""><div class="menu-info"><span class="menu-name">ភ្លាសាច់គោ</span><span class="menu-price">$9.99</span></div></div>
+      <div class="menu-item"><img src="https://instalacarte.com/media/cache/mobile_image/product/4756/62198/d86df0e73d1d6db3fecd4d821eb035c1.jpg" alt=""><div class="menu-info"><span class="menu-name">ឆាក្តៅមាន់</span><span class="menu-price">$4.99</span></div></div>
+      <div class="menu-item"><img src="https://domnor.com/admin/images/product/2019-07-20-16-25-37_1.jpg?v=1" alt=""><div class="menu-info"><span class="menu-name">ខ្យងចំហុយ</span><span class="menu-price">$7.50</span></div></div>
+      <div class="menu-item"><img src="https://kumnit.com/wp-content/uploads/2023/03/DSC06876-scaled.jpg" alt=""><div class="menu-info"><span class="menu-name">អយស្ទើរ</span><span class="menu-price">$5.60</span></div></div>
+      <div class="menu-item"><img src="https://images.deliveryhero.io/image/fd-kh/LH/bme2-listing.jpg" alt=""><div class="menu-info"><span class="menu-name">ពោះគោអាំងទឹកប្រហុក</span><span class="menu-price">$6.20</span></div></div>
+    </div>
+
+    <h2>🍺 Beer</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="https://images.ctfassets.net/libwp2cj9g3j/3KOcFhXtqKXUuOSL5TvMdl/58cd7d766c3ae7c0c09fbc154ffc01f5/card-our-beer.png?w=480" alt=""><div class="menu-info"><span class="menu-name">Anchor Beer</span><span class="menu-price">$1.50</span></div></div>
+      <div class="menu-item"><img src="https://assets-cdn.vtenh.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNk40Q2c9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--b43e5dc21f927a54d2f46e4a21889e2935ea004d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjloYm1SZmNHRmtXd2RwQWxnQ2FRSllBZz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--3dee1ed9b6e56500806820ced664e44d84074fae/image_picker_B6FBF5BA-03D6-409B-B6F5-60623B633B8B-1320-00000026A6238268.jpg?locale=en" alt=""><div class="menu-info"><span class="menu-name">Cambodia Beer</span><span class="menu-price">$1.30</span></div></div>
+      <div class="menu-item"><img src="https://cdn.s-liquor.com.kh/sliquors3/wp-content/uploads/2020/07/Heineken-Pint-330ml-01-1.jpg?strip=all&lossy=1&webp=85&avif=80&ssl=1" alt=""><div class="menu-info"><span class="menu-name">Heineken</span><span class="menu-price">$2.00</span></div></div>
+      <div class="menu-item"><img src="https://s3.ap-southeast-1.wasabisys.com/sliquors3/wp-content/uploads/2020/07/Tiger-Crystal-Beer-Pint-330ml-01.jpg" alt=""><div class="menu-info"><span class="menu-name">Tiger Beer</span><span class="menu-price">$1.70</span></div></div>
+      <div class="menu-item"><img src="https://theboxofficephnompenh.com/wp-content/uploads/2023/11/Angkor-Beer-Can-750-x-1000-2.jpg" alt=""><div class="menu-info"><span class="menu-name">Angkor Beer</span><span class="menu-price">$1.40</span></div></div>
+    </div>
+
+    <h2>🥤 Drinks</h2>
+    <div class="menu-grid">
+      <div class="menu-item"><img src="https://static.wixstatic.com/media/e55ac8_fb8a498ae9164fd2b37649b298b83285~mv2.png/v1/fill/w_564,h_846,al_c,q_90/e55ac8_fb8a498ae9164fd2b37649b298b83285~mv2.png" alt=""><div class="menu-info"><span class="menu-name">Milk Tea</span><span class="menu-price">$2.50</span></div></div>
+      <div class="menu-item"><img src="https://s23209.pcdn.co/wp-content/uploads/2015/07/Perfect-Iced-CoffeeIMG_0074.jpg" alt=""><div class="menu-info"><span class="menu-name">Iced Coffee</span><span class="menu-price">$1.80</span></div></div>
+      <div class="menu-item"><img src="https://cdn.foodfaithfitness.com/uploads/2024/09/Frozen-Fruit-Smoothie-Recipe-A_FFF_Frozen_Fruit_Smoothie_Feature_3.jpg" alt=""><div class="menu-info"><span class="menu-name">Fruit Smoothie</span><span class="menu-price">$2.80</span></div></div>
+      <div class="menu-item"><img src="https://healthnewshub.org/wp-content/uploads/2024/12/Green-Tea-Ozempic.jpg" alt=""><div class="menu-info"><span class="menu-name">Green Tea</span><span class="menu-price">$1.60</span></div></div>
+      <div class="menu-item"><img src="https://arecipeforfun.com/wp-content/uploads/2023/07/edits-italian-lemon-soda-limonata-1-2.jpg" alt=""><div class="menu-info"><span class="menu-name">Lemon Soda</span><span class="menu-price">$1.90</span></div></div>
+      <div class="menu-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Orangejuice.jpg" alt=""><div class="menu-info"><span class="menu-name">Orange Juice</span><span class="menu-price">$2.20</span></div></div>
+      <div class="menu-item"><img src="https://king-mart.shop:3010/media/file/crm/uploadfile/172949707362112811c63462cd82276c9b2004e86c0.jpg" alt=""><div class="menu-info"><span class="menu-name">Provida Water</span><span class="menu-price">$1.00</span></div></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
